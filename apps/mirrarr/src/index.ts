@@ -29,7 +29,15 @@ export const mirrarr = async (args: MirrarrArgs) => {
   logger.info('================= Staring =================')
 
   try {
-    const { chmod, destination, pgid, puid, radarrApiKey, radarrUrl } = args
+    const {
+      chmod,
+      destination: destinationRaw,
+      pgid,
+      puid,
+      radarrApiKey,
+      radarrUrl,
+    } = args
+    const destination = destinationRaw.replace(/\/$/, '')
 
     const radarr: Radarr = new Radarr({
       apiKey: radarrApiKey,
@@ -74,10 +82,7 @@ export const mirrarr = async (args: MirrarrArgs) => {
     for (const [mirroredFolder, moviePaths] of Object.entries(
       mirroredFolderAndMoviePaths,
     )) {
-      const destinationDir = `${destination.replace(
-        /\/$/,
-        '',
-      )}/${mirroredFolder}`
+      const destinationDir = `${destination}/${mirroredFolder}`
 
       // create missing directory
       if (createDirectoryIfNotExists(destinationDir, permissions)) {
@@ -111,10 +116,9 @@ export const mirrarr = async (args: MirrarrArgs) => {
       }
     }
 
-    // remove old folders
-    const removedDirs: string[] = removeFromDirNotInList(
-      destination,
-      destinationDirs,
+    // remove old lists & tags that no longer exists
+    const removedDirs: string[] = ['lists', 'tags'].flatMap((dir) =>
+      removeFromDirNotInList(`${destination}/${dir}`, destinationDirs),
     )
 
     for (const removedDir of removedDirs) {
