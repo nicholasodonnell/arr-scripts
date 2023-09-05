@@ -40,7 +40,7 @@ export const createDirectoryIfNotExists = (
 ): boolean => {
   try {
     if (!existsSync(dir)) {
-      mkdirSync(dir)
+      mkdirSync(dir, { recursive: true })
       setPermissions(dir, permissions)
 
       return true
