@@ -1,6 +1,6 @@
 {
   "name": "@arr-scripts/mirrarr",
-  "version": "1.0.1",
+  "version": "0.0.0",
   "main": "./src",
   "scripts": {
     "build": "tsc",
