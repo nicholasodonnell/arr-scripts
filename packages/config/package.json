@@ -1,0 +1,17 @@
+{
+  "name": "@arr-scripts/config",
+  "version": "1.0.0",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.59.11",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-perfectionist": "^1.5.1",
+    "eslint-plugin-prettier": "^5.0.0-alpha.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.44.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.1.3"
+  }
+}

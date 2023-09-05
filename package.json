@@ -1,0 +1,16 @@
+{
+  "name": "@arr-scripts/arr-scripts",
+  "version": "1.0.0",
+  "author": "Nicholas O'Donnell <nicholas@nicholasodonnell.com>",
+  "license": "SEE LICENSE",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "mirrar": "node /app/apps/mirrar/index.js"
+  }
+}
