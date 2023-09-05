@@ -54,7 +54,7 @@ export const mirrarr = async (args: MirrarrArgs) => {
     const mirroredFolderAndMoviePaths: Record<string, string[]> = {}
 
     for (const list of importlist) {
-      mirroredFolderAndMoviePaths[`${list.name} (LIST)`] = importlistMovies
+      mirroredFolderAndMoviePaths[`lists/${list.name}`] = importlistMovies
         .filter(movieInList(list.id))
         .map(pick('tmdbId'))
         .map(maybeFindMovieByTmdbId(movies))
@@ -64,7 +64,7 @@ export const mirrarr = async (args: MirrarrArgs) => {
     }
 
     for (const tag of tags) {
-      mirroredFolderAndMoviePaths[`${tag.label} (TAG)`] = movies
+      mirroredFolderAndMoviePaths[`tags/${tag.label}`] = movies
         .filter(movieWithTag(tag.id))
         .filter(rejectNoFile)
         .map(pick('path'))

@@ -193,6 +193,7 @@ export type Tag = {
 }
 
 export interface IRadarr {
+  addTagsToMovie: (movieId: number, tagIds: number[]) => Promise<void>
   getMovies(): Promise<Movie[]>
   getImportists(): Promise<Importlist[]>
   getImportlistMovies: () => Promise<ImportlistMovie[]>

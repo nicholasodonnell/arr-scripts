@@ -8,4 +8,14 @@
 
 ## Scripts
 
-[mirrarr](./apps/mirrarr) - symlink movies from your Radarr tags & lists to a destination directory
+### [Mirrarr](./apps/mirrarr)
+
+Symlinks movies based on your Radarr lists & tags. Useful for creating Plex libraries that mirror your Radarr instance.
+
+For example, you could create a Plex library that only contains movies that are tagged "Kids" in Radarr.
+
+### [Tagarr](./apps/tagarr)
+
+Add tags to movies according to list membership. Currently, Radarr will only tag movies based on the first list they were imported from. This script will tag movies based on all lists they are in.
+
+For example, if you have a list called "Kids" and a list called "Popular" both which contain the same movie, you can tag the movie in Radarr with tags from both lists.

@@ -1,4 +1,4 @@
-import type { ImportlistMovie, Movie } from './types'
+import type { Importlist, ImportlistMovie, Movie, Tag } from './types'
 
 export const movieInList =
   (listId: number) =>
@@ -21,3 +21,15 @@ export const maybeFindMovieByTmdbId =
 export const rejectNoFile = (movie: Movie): boolean => {
   return movie.hasFile
 }
+
+export const tagsForList =
+  (list: Importlist) =>
+  (tag: Tag): boolean => {
+    return list.tags.includes(tag.id)
+  }
+
+export const tagsNotWithMovie =
+  (movie: Movie) =>
+  (tag: Tag): boolean => {
+    return !movie.tags.includes(tag.id)
+  }

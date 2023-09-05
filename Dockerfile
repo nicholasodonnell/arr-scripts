@@ -22,6 +22,7 @@ COPY package-lock.json ./package-lock.json
 
 # apps
 COPY apps/mirrarr/package.json ./apps/mirrarr/package.json
+COPY apps/tagarr/package.json ./apps/tagarr/package.json
 
 # packages
 COPY packages/config/package.json ./packages/config/package.json
@@ -53,6 +54,7 @@ COPY --from=build /app/node_modules ./node_modules
 
 # apps
 COPY --from=build /app/apps/mirrarr/dist ./apps/mirrarr
+COPY --from=build /app/apps/tagarr/dist ./apps/tagarr
 
 # packages
 COPY --from=build /app/packages/filesystem/dist ./packages/filesystem/src

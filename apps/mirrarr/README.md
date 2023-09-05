@@ -1,7 +1,5 @@
 # Mirrarr
 
-Symlink movies from your Radarr tags & lists to a destination directory enabling the creation of separate Plex libraries. Run it as a cron job to to keep your libraries up-to-date!
-
 ## Usage
 
 > :exclamation: Be sure to mount `/path/to/radarr/root/folder` in the below example with your Radarr root folder(s). The path on the host should match the path in the container.

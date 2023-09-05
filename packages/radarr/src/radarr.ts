@@ -17,6 +17,22 @@ export class Radarr implements IRadarr {
     })
   }
 
+  public async addTagsToMovie(movieId: number, tags: number[]): Promise<void> {
+    try {
+      await this.client.put('/api/v3/movie/editor', {
+        applyTags: 'add',
+        movieIds: [movieId],
+        tags,
+      })
+    } catch (e: any) {
+      const error = new Error(
+        `Failed to add tag to movie: ${e.message}`,
+      )
+
+      throw error
+    }
+  }
+
   public async getMovies(): Promise<Movie[]> {
     try {
       const response = await this.client.get<Movie[]>('/api/v3/movie')
