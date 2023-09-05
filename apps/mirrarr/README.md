@@ -1,8 +1,4 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="../../images/mirrar/banner-dark.png">
-  <source media="(prefers-color-scheme: light)" srcset="../../images/mirrar/banner-light.png">
-  <img src="../../images/mirrar/banner-dark.png">
-</picture>
+# Mirrarr
 
 Symlink movies from your Radarr tags & lists to a destination directory enabling the creation of separate Plex libraries. Run it as a cron job to to keep your libraries up-to-date!
 
@@ -20,7 +16,7 @@ docker run --rm \
   -v /path/to/radarr/root/folder:/path/to/radarr/root/folder \
   -v /path/to/destination:/path/to/destination \
   nicholasodonnell/arr-scripts:latest \
-  mirrar -- \
+  mirrarr -- \
     --radarrUrl=http://[radarr-address]:[radarr-port] \
     --radarrApiKey=[radarr-api-key] \
     --destination=/path/to/destination

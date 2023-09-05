@@ -11,6 +11,6 @@
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
-    "mirrar": "node /app/apps/mirrar/index.js"
+    "mirrarr": "node /app/apps/mirrarr/index.js"
   }
 }

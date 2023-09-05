@@ -21,7 +21,7 @@ COPY package.json ./package.json
 COPY package-lock.json ./package-lock.json
 
 # apps
-COPY apps/mirrar/package.json ./apps/mirrar/package.json
+COPY apps/mirrarr/package.json ./apps/mirrarr/package.json
 
 # packages
 COPY packages/config/package.json ./packages/config/package.json
@@ -52,7 +52,7 @@ ENV NODE_ENV=production
 COPY --from=build /app/node_modules ./node_modules
 
 # apps
-COPY --from=build /app/apps/mirrar/dist ./apps/mirrar
+COPY --from=build /app/apps/mirrarr/dist ./apps/mirrarr
 
 # packages
 COPY --from=build /app/packages/filesystem/dist ./packages/filesystem/src

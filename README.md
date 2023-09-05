@@ -8,4 +8,4 @@
 
 ## Scripts
 
-[mirrar](./apps/mirrar) - symlink movies from your Radarr tags & lists to a destination directory
+[mirrarr](./apps/mirrarr) - symlink movies from your Radarr tags & lists to a destination directory

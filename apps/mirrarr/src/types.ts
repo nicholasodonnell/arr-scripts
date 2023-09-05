@@ -1,4 +1,4 @@
-export type MirrarArgs = {
+export type MirrarrArgs = {
   chmod?: string
   destination: string
   pgid?: string

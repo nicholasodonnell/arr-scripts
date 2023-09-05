@@ -21,9 +21,9 @@ import {
 import { pick, rejectUndefined } from '@arr-scripts/util'
 import { Command, program } from 'commander'
 
-import type { MirrarArgs } from './types'
+import type { MirrarrArgs } from './types'
 
-export const mirrar = async (args: MirrarArgs) => {
+export const mirrarr = async (args: MirrarrArgs) => {
   const logger: Logger = new Logger()
 
   logger.info('================= Staring =================')
@@ -140,7 +140,7 @@ if (require.main === module) {
     .parse(process.argv)
     .opts()
 
-  mirrar(command as unknown as MirrarArgs)
+  mirrarr(command as unknown as MirrarrArgs)
     .then(() => process.exit(0))
     .catch(() => process.exit(1))
 }
