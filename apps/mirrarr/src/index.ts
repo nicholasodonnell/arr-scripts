@@ -26,7 +26,7 @@ import type { MirrarrArgs } from './types'
 export const mirrarr = async (args: MirrarrArgs) => {
   const logger: Logger = new Logger()
 
-  logger.info('================= Staring =================')
+  logger.info('================= Starting =================')
 
   try {
     const {

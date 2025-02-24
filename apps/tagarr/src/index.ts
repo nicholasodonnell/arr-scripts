@@ -20,7 +20,7 @@ import type { TagarrArgs } from './types'
 export const tagarr = async (args: TagarrArgs) => {
   const logger: Logger = new Logger()
 
-  logger.info('================= Staring =================')
+  logger.info('================= Starting =================')
 
   try {
     const { radarrApiKey, radarrUrl } = args
